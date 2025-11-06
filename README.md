@@ -70,7 +70,9 @@ BÀI LÀM
 
    ✅ Docker Desktop: đã kết nối thành công với Ubuntu
  ![Uploading image.png…]()
+
 3.3. Sử dụng 1 file docker-compose.yml để cài đặt các docker container sau: 
+
    mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
 
    Tạo một thư mục project, ví dụ project, và bên trong tạo file docker-compose.yml:

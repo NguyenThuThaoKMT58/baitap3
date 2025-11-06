@@ -77,70 +77,122 @@ BÀI LÀM
 
    
 services:
+
   mariadb:
+  
     image: mariadb:10.11
+    
     container_name: mariadb
+    
     restart: always
+    
     environment:
+    
       MYSQL_ROOT_PASSWORD: root123
+      
       MYSQL_DATABASE: shopdb
+      
       MYSQL_USER: admin
+      
       MYSQL_PASSWORD: admin123
     ports:
+    
       - "3306:3306"
+      
     volumes:
+    
       - mariadb_data:/var/lib/mysql
 
   phpmyadmin:
+  
     image: phpmyadmin/phpmyadmin
+    
     container_name: phpmyadmin
+    
     restart: always
+    
     environment:
+    
       PMA_HOST: mariadb
+      
       PMA_USER: admin
+      
       PMA_PASSWORD: admin123
+      
     ports:
+    
       - "8080:80"
+      
     depends_on:
+    
       - mariadb
 
   nodered:
+  
     image: nodered/node-red
+    
     container_name: nodered
+    
     restart: always
+    
     ports:
+    
       - "1880:1880"
+      
     volumes:
+    
       - nodered_data:/data
 
   influxdb:
+  
     image: influxdb:2.7
+    
     container_name: influxdb
+    
     restart: always
+    
     environment:
+    
       DOCKER_INFLUXDB_INIT_MODE: setup
+      
       DOCKER_INFLUXDB_INIT_USERNAME: admin
+      
       DOCKER_INFLUXDB_INIT_PASSWORD: admin123
+      
       DOCKER_INFLUXDB_INIT_ORG: myorg
+      
       DOCKER_INFLUXDB_INIT_BUCKET: mybucket
+      
     ports:
+    
       - "8086:8086"
+      
     volumes:
+    
       - influxdb_data:/var/lib/influxdb2
 
   grafana:
+  
     image: grafana/grafana
+    
     container_name: grafana
+    
     restart: always
+    
     environment:
+    
       GF_SECURITY_ADMIN_USER: admin
+      
       GF_SECURITY_ADMIN_PASSWORD: admin123
+      
     ports:
       - "3000:3000"
     volumes:
+    
       - grafana_data:/var/lib/grafana
 
   nginx:
+  
     image: nginx:latest
     container_name: nginx
     restart: always

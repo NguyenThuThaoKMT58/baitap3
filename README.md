@@ -61,4 +61,13 @@ CÁCH ĐÁNH GIÁ:
 BÀI LÀM
 1. Cài đặt môi trường linux:
    Em dùng phương án : enable wsl: cài đặt ubuntu
-   ![Uploading image.png…]()
+   <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d60aba4d-0a39-4c2b-8341-077c66a74747" />
+2. Cài đặt Docker
+   <img width="1115" height="626" alt="image" src="https://github.com/user-attachments/assets/26df6ee4-caae-4f98-b1ac-a6c97f6e7446" />
+   ✅ WSL2 + Ubuntu: hoạt động tốt
+
+   ✅ Docker Engine: đang chạy trong WSL
+
+   ✅ Docker Desktop: đã kết nối thành công với Ubuntu
+ ![Uploading image.png…]()
+3.
